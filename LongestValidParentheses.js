@@ -1,16 +1,6 @@
 var longestValidParentheses = function(s) {
     if (s.length <= 1)
         return 0
-    //setup
-    let i = 0;
-    while (true) {
-        if (!s[i])
-            return 0
-        if (s[i] == '(')
-            break
-        i++
-    }
-
 
     const potential = (substr) => {
         let balance = 1
@@ -33,7 +23,7 @@ var longestValidParentheses = function(s) {
     let load = 0
 
 
-    for (i; i < s.length; i++) {
+    for (let i = 0; i < s.length; i++) {
 
         if (s[i] == ')') {
             max = Math.max(max, load)
